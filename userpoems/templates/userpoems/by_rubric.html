@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html leng='ru'>
+   <head>
+	<meta charset="UTF-8">
+	<title>{{current_rubric.name}} :: Моностихи пользователей</title>
+   </head>
+   <body>
+  	<h1>Моностихи</h1>
+	<h2>Тема: {{current_rubric.name}}</h2>
+	<div>
+ 	    <a href="/userpoems/">Главная</a>
+	   {% for rubric in rubrics%}
+	  <a href="/userpoems/{{rubric.pk}}/">{{rubric.name}}</a>
+	 {% endfor %}
+	</div>
+	{% for bb in bbs %}
+	<div>
+		<h2>{{bb.author}}</h2>
+		<p> {{bb.poem}}</p>
+		<p> {{bb.published|date:"d.m.Y. H:i:s"}}</p>
+	</div>
+	{% endfor %}
+   </body>
+</html>
+	
